@@ -69,6 +69,8 @@ function calcSom() {calcSom:{
           break calcSom;          
         }
         total += numero;
+        alert(`${numero}`);
+        alert(`${total}`);
     }
     alert('Total: ' + total);
 }}

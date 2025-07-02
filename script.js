@@ -1,6 +1,6 @@
 function numSec() {
   alert('Número secreto!');
-  let numeroSecreto = Math.random() * (10 - 1) + 1;
+  let numeroSecreto = Math.floor(Math.random() * (10 - 1) + 1);
   console.log(numeroSecreto); 
 
   let chute;

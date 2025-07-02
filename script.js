@@ -22,7 +22,7 @@ function numSec() {
 
 document.getElementById("btNum").addEventListener("click", numSec);
 
-function calcMed() {calcMed:{
+function calcMed() {
   alert('Calculo de média!');
 
     let quantidade;
@@ -31,7 +31,7 @@ function calcMed() {calcMed:{
     do {
       quantidade = parseInt(prompt('Quantas notas você quer inserir?'));
       if (quantidade === null) {
-          break calcMed;          
+          return false;          
         }
       if (quantidade == 0) {
           alert('Ao menos uma nota precissa ser inserida!');
@@ -41,16 +41,16 @@ function calcMed() {calcMed:{
     for (i = 0; i < quantidade; i++) {
         nota = parseFloat(prompt('Digite a ' + (i + 1) + ' nota: '));
         if (nota === null) {
-          break calcMed;          
+          return false;          
         }    
         media += nota;
     }
     alert('Média: ' + (media / quantidade).toFixed(2));
-}}
+}
 
 document.getElementById("btMed").addEventListener("click", calcMed);
 
-function calcSom() {calcSom:{
+function calcSom() {
   alert('Calculo da soma!');
 
     let quantidade;
@@ -59,7 +59,7 @@ function calcSom() {calcSom:{
     do {
       quantidade = parseInt(prompt('Quantos numero você quer somar?'));
       if (quantidade === null) {
-        break calcSom;          
+        return false;          
       }
       if (quantidade <= 1) {
         alert('Ao menos dois numeros precissam ser inseridos!');
@@ -69,13 +69,11 @@ function calcSom() {calcSom:{
     for (i = 0; i < quantidade; i++) {
         numero = parseFloat(prompt('Digite o ' + (i + 1) + ' numero: '));
         if (numero === null) {
-          break calcSom;          
+          return false;         
         }
         total += numero;
-        alert(`${numero}`);
-        alert(`${total}`);
     }
     alert('Total: ' + total);
-}}
+}
 
 document.getElementById("btSoma").addEventListener("click", calcSom);

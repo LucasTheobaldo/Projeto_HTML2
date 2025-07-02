@@ -6,18 +6,16 @@ function calcSom() {
     let total = 0;
     do {
       quantidade = parseInt(prompt('Quantos numero você quer somar?'));
-      if (quantidade == null) {
+      if (isNaN(quantidade)) {
         return false;          
       }else if (quantidade <= 1) {
         alert('Ao menos dois numeros precissam ser inseridos!');
-      }else{
-        quantidade = Math.floor(quantidade);
       }
     } while (quantidade <= 1);
     
     for (i = 0; i < quantidade; i++) {
         numero = parseFloat(prompt('Digite o ' + (i + 1) + ' numero: '));
-        if (isNaN(numero) ) {
+        if (isNaN(numero)) {
           return false;         
         }
         total += numero;
@@ -37,6 +35,9 @@ function numSec() {
 
   while (chute != numeroSecreto) {
     chute = parseInt(prompt('Escolha um número entre 1 e 10'));
+    if (isNaN(chute)) {
+      return false;         
+    }
     tentativas++;
 
     if (chute == numeroSecreto) {
@@ -60,21 +61,18 @@ function calcMed() {
     let media = 0;
     do {
       quantidade = parseInt(prompt('Quantas notas você quer inserir?'));
-      if (quantidade == null) {
+      if (isNaN(quantidade)) {
           return false;          
       }else if (quantidade < 1) {
           alert('Ao menos uma nota precissa ser inserida!');
-      }else{
-        quantidade = Math.floor(quantidade);
       }
-    } while (quantidade == 0);
+    } while (quantidade < 1);
     
     for (i = 0; i < quantidade; i++) {
         nota = parseFloat(prompt('Digite a ' + (i + 1) + ' nota: '));
-        if (nota == null) {
+        if (isNaN(nota)) {
           return false;          
-        }   
-        nota = Math.floor(nota); 
+        }    
         media += nota;
     }
     alert('Média: ' + (media / quantidade).toFixed(2));

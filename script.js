@@ -30,19 +30,19 @@ function calcMed() {calcMed:{
     let media = 0;
     do {
       quantidade = parseInt(prompt('Quantas notas você quer inserir?'));
-      if (numero === null) {
+      if (quantidade === null) {
           break calcMed;          
         }
-      if (quantidade === 0) {
+      if (quantidade == 0) {
           alert('Ao menos uma nota precissa ser inserida!');
       }
-    } while (quantidade === 0);
+    } while (quantidade == 0);
     
     for (i = 0; i < quantidade; i++) {
         nota = parseFloat(prompt('Digite a ' + (i + 1) + ' nota: '));
-        if (nota === null){
-          nota = 0;
-        }
+        if (nota === null) {
+          break calcMed;          
+        }    
         media += nota;
     }
     alert('Média: ' + (media / quantidade).toFixed(2));
@@ -58,8 +58,8 @@ function calcSom() {calcSom:{
     let total;
     do {
       quantidade = parseInt(prompt('Quantos numero você quer somar?'));
-       if (quantidade < 1) {
-          alert('Ao menos dois numeros precissam ser inseridos!');
+      if (quantidade < 1) {
+        alert('Ao menos dois numeros precissam ser inseridos!');
       }
     } while (quantidade < 1);
     

@@ -47,18 +47,27 @@ function calcMed() {
 
 document.getElementById("btMed").addEventListener("click", calcMed);
 
-function calcSom() {
+function calcSom() {calcSom:{
   alert('Calculo da soma!');
 
     let quntidade;
     let numero;
     let total;
-    quntidade = parseInt(prompt('Quantos numero você quer somar?'));
+    do {
+      quntidade = parseInt(prompt('Quantos numero você quer somar?'));
+       if (quantidade < 1) {
+          alert('Ao menos dois numeros precissam ser inseridos!');
+      }
+    } while (quantidade < 1);
+    
     for (i = 0; i < quntidade; i++) {
         numero = parseFloat(prompt('Digite o ' + (i + 1) + ' numero: '));
+        if (numero === null) {
+          break calcSom;          
+        }
         total += numero;
     }
     alert('Total: ' + total);
-}
+}}
 
 document.getElementById("btSoma").addEventListener("click", calcSom);

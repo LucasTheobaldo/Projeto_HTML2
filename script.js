@@ -1,6 +1,6 @@
 function numSec() {
   alert('Número secreto!');
-  let numeroSecreto = 5;
+  let numeroSecreto = Math.random() * (10 - 1) + 1;
   console.log(numeroSecreto); 
 
   let chute;
@@ -37,3 +37,19 @@ function calcMed() {
 }
 
 document.getElementById("btMed").addEventListener("click", calcMed);
+
+function calcSom() {
+  alert('Calculo da soma!');
+
+    let quntidade;
+    let numero;
+    let total;
+    quntidade = parseInt(prompt('Quantos numero você quer somar?'));
+    for (i = 0; i < quntidade; i++) {
+        numero = parseFloat(prompt('Digite a ' + (i + 1) + 'nota: '));
+        total += nota;
+    }
+    alert('Total: ' + total);
+}
+
+document.getElementById("btSoma").addEventListener("click", calcSom);

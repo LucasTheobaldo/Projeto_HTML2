@@ -1,3 +1,32 @@
+function calcSom() {
+  alert('Calculo da soma!');
+
+    let quantidade;
+    let numero;
+    let total = 0;
+    do {
+      quantidade = parseInt(prompt('Quantos numero você quer somar?'));
+      if (quantidade == null) {
+        return false;          
+      }else if (quantidade <= 1) {
+        alert('Ao menos dois numeros precissam ser inseridos!');
+      }else{
+        quantidade = Math.floor(quantidade);
+      }
+    } while (quantidade <= 1);
+    
+    for (i = 0; i < quantidade; i++) {
+        numero = parseFloat(prompt('Digite o ' + (i + 1) + ' numero: '));
+        if (isNaN(numero) ) {
+          return false;         
+        }
+        total += numero;
+    }
+    alert('Total: ' + total);
+}
+
+document.getElementById("btSoma").addEventListener("click", calcSom);
+
 function numSec() {
   alert('Número secreto!');
   let numeroSecreto = Math.floor(Math.random() * (10 - 1) + 1);
@@ -22,6 +51,7 @@ function numSec() {
 
 document.getElementById("btNum").addEventListener("click", numSec);
 
+
 function calcMed() {
   alert('Calculo de média!');
 
@@ -30,50 +60,24 @@ function calcMed() {
     let media = 0;
     do {
       quantidade = parseInt(prompt('Quantas notas você quer inserir?'));
-      if (quantidade === null) {
+      if (quantidade == null) {
           return false;          
-        }
-      if (quantidade == 0) {
+      }else if (quantidade < 1) {
           alert('Ao menos uma nota precissa ser inserida!');
+      }else{
+        quantidade = Math.floor(quantidade);
       }
     } while (quantidade == 0);
     
     for (i = 0; i < quantidade; i++) {
         nota = parseFloat(prompt('Digite a ' + (i + 1) + ' nota: '));
-        if (nota === null) {
+        if (nota == null) {
           return false;          
-        }    
+        }   
+        nota = Math.floor(nota); 
         media += nota;
     }
     alert('Média: ' + (media / quantidade).toFixed(2));
 }
 
 document.getElementById("btMed").addEventListener("click", calcMed);
-
-function calcSom() {
-  alert('Calculo da soma!');
-
-    let quantidade;
-    let numero;
-    let total = 0;
-    do {
-      quantidade = parseInt(prompt('Quantos numero você quer somar?'));
-      if (quantidade === null) {
-        return false;          
-      }
-      if (quantidade <= 1) {
-        alert('Ao menos dois numeros precissam ser inseridos!');
-      }
-    } while (quantidade <= 1);
-    
-    for (i = 0; i < quantidade; i++) {
-        numero = parseFloat(prompt('Digite o ' + (i + 1) + ' numero: '));
-        if (numero === null) {
-          return false;         
-        }
-        total += numero;
-    }
-    alert('Total: ' + total);
-}
-
-document.getElementById("btSoma").addEventListener("click", calcSom);

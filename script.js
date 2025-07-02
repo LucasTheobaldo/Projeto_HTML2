@@ -58,7 +58,7 @@ function calcSom() {calcSom:{
     let total = 0;
     do {
       quantidade = parseInt(prompt('Quantos numero você quer somar?'));
-      if (numero == null) {
+      if (quantidade === null) {
         break calcSom;          
       }
       if (quantidade <= 1) {

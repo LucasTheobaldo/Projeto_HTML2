@@ -12,11 +12,9 @@ function numSec() {
 
     if (chute == numeroSecreto) {
       alert(`Você acertou o número secreto ${numeroSecreto} na tentativa ${tentativas}.`);
-    } else if (chute == null) {
-      break;
     } else if (chute > numeroSecreto) {
-      alert(`O número secreto é menor que ${chute}. Tente novamente.${numeroSecreto}`);
-    } else {
+      alert(`O número secreto é menor que ${chute}. Tente novamente.`);
+    } else if (chute < numeroSecreto){
       alert(`O número secreto é maior que ${chute}. Tente novamente.`);
     }  
   }

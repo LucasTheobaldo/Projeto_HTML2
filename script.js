@@ -28,9 +28,18 @@ function calcMed() {
     let quntidade;
     let nota;
     let media = 0;
-    quntidade = parseInt(prompt('Quantas notas você quer inserir?'));
+    do {
+      quntidade = parseInt(prompt('Quantas notas você quer inserir?'));
+      if (quantidade === null || quantidade == 0) {
+          alert('Ao menos uma nota precissa ser inserida!');
+      }
+    } while (quantidade === null || quantidade == 0);
+    
     for (i = 0; i < quntidade; i++) {
         nota = parseFloat(prompt('Digite a ' + (i + 1) + ' nota: '));
+        if (nota === null){
+          nota = 0;
+        }
         media += nota;
     }
     alert('Média: ' + (media / quntidade).toFixed(2));

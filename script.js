@@ -30,7 +30,7 @@ function calcMed() {
     let media = 0;
     quntidade = parseInt(prompt('Quantas notas você quer inserir?'));
     for (i = 0; i < quntidade; i++) {
-        nota = parseFloat(prompt('Digite a ' + (i + 1) + 'nota: '));
+        nota = parseFloat(prompt('Digite a ' + (i + 1) + ' nota: '));
         media += nota;
     }
     alert('Média: ' + (media / quntidade).toFixed(2));
@@ -46,8 +46,8 @@ function calcSom() {
     let total;
     quntidade = parseInt(prompt('Quantos numero você quer somar?'));
     for (i = 0; i < quntidade; i++) {
-        numero = parseFloat(prompt('Digite a ' + (i + 1) + 'nota: '));
-        total += nota;
+        numero = parseFloat(prompt('Digite o ' + (i + 1) + ' numero: '));
+        total += numero;
     }
     alert('Total: ' + total);
 }

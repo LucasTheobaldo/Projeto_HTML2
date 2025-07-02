@@ -55,13 +55,16 @@ function calcSom() {calcSom:{
 
     let quantidade;
     let numero;
-    let total;
+    let total = 0;
     do {
       quantidade = parseInt(prompt('Quantos numero você quer somar?'));
-      if (quantidade < 1) {
+      if (numero == null) {
+        break calcSom;          
+      }
+      if (quantidade <= 1) {
         alert('Ao menos dois numeros precissam ser inseridos!');
       }
-    } while (quantidade < 1);
+    } while (quantidade <= 1);
     
     for (i = 0; i < quantidade; i++) {
         numero = parseFloat(prompt('Digite o ' + (i + 1) + ' numero: '));
